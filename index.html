@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>ZooShop</title>
@@ -11,7 +12,7 @@
 <body>
   <!--  NAVBAR STARTS HERE  -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+    <div class="container mt-1">
       <a class="navbar-brand text-success" href="#">ZooShop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,20 +20,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About</a>
+            <a class="nav-link active" aria-current="page" href="#">О магазине</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacts</a>
+            <a class="nav-link" href="#">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
           </li>
         </ul>
-
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-
-        <button class="btn btn-dark">Cart</button>
-        <button class="btn btn-dark">History</button>
+        <button class="btn btn-dark me-3 position-relative">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
+        </button>
+        <button class="btn btn-dark"><i class="fas fa-history"></i></button>   
       </div>
     </div>
   </nav> 
@@ -41,162 +45,212 @@
   <div class="container">
     <div class="row">
       <!-- SIDEBAR STARTS HERE (FILTERS)-->
-      <div class="sidebar col-2 d-flex flex-column">
-        <div class="filters p-3 d-flex flex-column">
+      <div class="sidebar col-3 d-flex flex-column">
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-              Cats <span class="badge bg-dark">26</span>
+              Коты <span class="badge bg-dark">26</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Kittens <span class="badge bg-secondary">12</span>
+              Муж <span class="badge bg-secondary">18</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Adults <span class="badge bg-secondary">14</span>
+              Жен <span class="badge bg-secondary">8</span>
             </label>
           </div>
-          <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckChecked">
-              Male <span class="badge bg-secondary">18</span>
-            </label>
+          <div>
+            <label for="customRange2" class="form-label">Возраст: <span class="cats-age"></span></label>
+            <input type="range" class="form-range cats-age-range" min="1" max="120" id="customRange2">
           </div>
-          <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckChecked">
-              Female <span class="badge bg-secondary">8</span>
-            </label>
+          <div>
+            Игривость: 
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
           </div>
         </div>
         
-        <div class="filters p-3 d-flex flex-column">
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-              Dogs <span class="badge bg-dark">48</span>
+              Собаки <span class="badge bg-dark">48</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Puppies <span class="badge bg-secondary">32</span>
+              Муж <span class="badge bg-secondary">22</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Adults <span class="badge bg-secondary">16</span>
+              Жен <span class="badge bg-secondary">26</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Male <span class="badge bg-secondary">22</span>
+              Охотничья <span class="badge bg-secondary">26</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Female <span class="badge bg-secondary">26</span>
+              Декоративная <span class="badge bg-secondary">26</span>
             </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Служебная <span class="badge bg-secondary">26</span>
+            </label>
+          </div>
+          <div>
+            <label for="customRange2" class="form-label">Возраст: <span class="dogs-age"></span></label>
+            <input type="range" class="form-range dogs-age-range" min="1" max="120" id="customRange2">
           </div>
         </div>
         
-        <div class="filters p-3 d-flex flex-column">
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-              Rodents <span class="badge bg-dark">26</span>
+              Грызуны <span class="badge bg-dark">26</span>
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Rabbits <span class="badge bg-secondary">8</span>
+              Декоративные кролики 
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Rats <span class="badge bg-secondary">6</span>
+              Декоративные крысы 
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Hamsters <span class="badge bg-secondary">4</span>
+              Декоративные мыши 
             </label>
           </div>
           <div class="form-check m-1">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
-              Guinea Pigs <span class="badge bg-secondary">8</span>
+              Хомяки 
             </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Морские свинки 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Шиншиллы 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Дегу 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Песчанки 
+            </label>
+          </div>
+          <div>
+            <label for="customRange2" class="form-label">Возраст: <span class="rodents-age"></span></label>
+            <input type="range" class="form-range rodents-age-range" min="1" max="72" id="customRange2">
           </div>
         </div>
       </div>
       <!-- /SIDEBAR ENDS HERE (FILTERS)-->
       <!-- CARDS SECTION STARTS HERE -->
-      <div class="col-10 d-flex flex-wrap justify-content-center cards">
+      <div class="col-9 d-flex flex-wrap justify-content-center cards">
         <div class="card m-3" style="width: 275px; height: 500px">
-          <h5 class="card-header text-center">British Shorthair</h5>
+          <h5 class="card-header text-center">Британская короткошерстная</h5>
           <img src="https://media.istockphoto.com/photos/front-view-of-british-shorthair-cat-7-months-old-sitting-picture-id104355461?k=20&m=104355461&s=612x612&w=0&h=9KPbuZ6tTUxqi-_WZT8zrjNrf1W8XBuXIw8ZIM_YQuI=" class="card-img-top" alt="Animal">
           <div class="card-body text-center">
-            <p class="card-text h4">Price: 1500 UAH</p>
-            <a href="#" class="btn btn-outline-dark">Learn more</a>
-            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+            <p class="card-text h4">Стоимость: 1500 UAH</p>
+            <a href="#" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Узнать больше</a>
+            <a href="#" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
           </div>
           <div class="card-footer text-center">
-            <span class="badge bg-secondary">Female</span>
-            <span class="badge bg-info">Adult</span>
-            <span class="badge bg-warning">Cat</span>
-            <span class="badge bg-danger">Grey</span>
-            <span class="badge bg-success">British Shorthair</span>
+            <span class="badge bg-danger">Жен</span>
+            <span class="badge bg-success">Коты</span>
           </div>
         </div>
         <div class="card m-3" style="width: 275px; height: 500px">
-          <h5 class="card-header text-center">British Shorthair</h5>
+          <h5 class="card-header text-center">Британская короткошерстная</h5>
           <img src="https://media.istockphoto.com/photos/front-view-of-british-shorthair-cat-7-months-old-sitting-picture-id104355461?k=20&m=104355461&s=612x612&w=0&h=9KPbuZ6tTUxqi-_WZT8zrjNrf1W8XBuXIw8ZIM_YQuI=" class="card-img-top" alt="Animal">
           <div class="card-body text-center">
-            <p class="card-text h4">Price: 1500 UAH</p>
-            <a href="#" class="btn btn-outline-dark">Learn more</a>
-            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+            <p class="card-text h4">Стоимость: 1500 UAH</p>
+            <a href="#" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Узнать больше</a>
+            <a href="#" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
           </div>
           <div class="card-footer text-center">
-            <span class="badge bg-secondary">Female</span>
-            <span class="badge bg-info">Adult</span>
-            <span class="badge bg-warning">Cat</span>
-            <span class="badge bg-danger">Grey</span>
-            <span class="badge bg-success">British Shorthair</span>
+            <span class="badge bg-danger">Жен</span>
+            <span class="badge bg-success">Коты</span>
           </div>
         </div>
         <div class="card m-3" style="width: 275px; height: 500px">
-          <h5 class="card-header text-center">British Shorthair</h5>
+          <h5 class="card-header text-center">Британская короткошерстная</h5>
           <img src="https://media.istockphoto.com/photos/front-view-of-british-shorthair-cat-7-months-old-sitting-picture-id104355461?k=20&m=104355461&s=612x612&w=0&h=9KPbuZ6tTUxqi-_WZT8zrjNrf1W8XBuXIw8ZIM_YQuI=" class="card-img-top" alt="Animal">
           <div class="card-body text-center">
-            <p class="card-text h4">Price: 1500 UAH</p>
-            <a href="#" class="btn btn-outline-dark">Learn more</a>
-            <a href="#" class="btn btn-outline-dark">Add to cart</a>
+            <p class="card-text h4">Стоимость: 1500 UAH</p>
+            <a href="#" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Узнать больше</a>
+            <a href="#" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
           </div>
           <div class="card-footer text-center">
-            <span class="badge bg-secondary">Female</span>
-            <span class="badge bg-info">Adult</span>
-            <span class="badge bg-warning">Cat</span>
-            <span class="badge bg-danger">Grey</span>
-            <span class="badge bg-success">British Shorthair</span>
+            <span class="badge bg-danger">Жен</span>
+            <span class="badge bg-success">Коты</span>
           </div>
         </div>
       </div>
     </div>
     <!-- CARDS SECTION ENDS HERE -->
+    <!-- MODAL STARTS HERE -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Британская короткошерстная</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Дата рождения: 23.12.2019</p>
+            <p>Игривость: <span><i class="fas fa-star text-warning"></i></span></p>
+            <p>Современные британские короткошерстные кошки – это хорошо сложенные животные от среднего до крупного размера с мощным телом, коренастыми ногами и крепкими округлыми лапами. Вес взрослого животного колеблется от 3 до 7 кг, коты крупнее кошек. Круглую голову венчают широко поставленные уши средних размеров. А мордочка с полными щечками и большими круглыми распахнутыми глазами никого не оставит равнодушным. Шерсть у этих кошек короткая, плотная, блестящая, с хорошо развитым подшерстком. Она не прилегает к телу, из-за этого выглядит плюшевой. Самый популярный окрас среди любителей породы – голубой. Однако благодаря племенной работе на сегодняшний день порода насчитывает около 200 различных окрасов: однотонные (черный, голубой, шоколадный, лиловый, красный, кремовый, белый), черепаховые, типированные (дымные, затушеванные, шиншильные), табби (мраморный, макрель, пятнистый), колор-пойнтовые, биколорные. Как правило, у британцев ярко-оранжевый цветом глаз, но в зависимости от окраса он может быть голубым, синим, зеленым.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL ENDS HERE -->
   </div>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
