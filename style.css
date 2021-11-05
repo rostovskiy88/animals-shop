@@ -1,0 +1,11 @@
+img {
+    width: 275px;
+    height: 275px;
+}
+
+.filters {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin: 10px;
+    height: auto;
+}
