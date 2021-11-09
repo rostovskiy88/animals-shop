@@ -1,10 +1,5 @@
-export default class Model {
-
-    async getData() {
-        const res = await fetch('https://opensheet.vercel.app/1yh2kVgMDELkBtBYv9WubYVYidXJ3qNLPGiE3GAF_3Fo/sheet1');
-        const data = await res.json();
-        return data;
-    }
+import ModelM from "../common/modelM.js";
+export default class Model extends ModelM {
 
     sortByPriceDown(data) {
         const sortedList = data.sort((a, b) => {
@@ -19,10 +14,6 @@ export default class Model {
         });
         return sortedList;
     }
-
-    getProductDetails = async ( id ) => {
-        const data = await this.getData();
-        return data.filter( el => el.id === id)[0];
-    }
+    
 }
    

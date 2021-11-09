@@ -1,10 +1,11 @@
+import Publisher from '../common/publisher.js';
 import Model from './model.js';
 import View from './view.js';
 
 export default class Controller {
     constructor() {
         this.model = new Model();
-        this.view = new View(this.onPriceDown, this.onPriceUp, this.showModal);
+        this.view = new View(this.onPriceDown, this.onPriceUp, this.listenToClick);
     }
     
     init = async () => {
@@ -24,9 +25,8 @@ export default class Controller {
         this.view.renderList(sortedData);
     };
 
-    showModal = async (event) => {
+    listenToClick = (event) => {
         const id = this.view.getId(event);
-        const productDetails = await this.model.getProductDetails(id);
-        this.view.displayProductDetails(productDetails);
-    };
+        Publisher.notify(Publisher.events.productId, id);
+    }
 }

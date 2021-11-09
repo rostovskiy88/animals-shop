@@ -1,31 +1,28 @@
 export default class View {
-
     priceDown = document.querySelector('.priceDown');
     priceUp = document.querySelector('.priceUp');
     cardsContainer = document.querySelector('.cards');
 
-    constructor(onPriceDown, onPriceUp, showModal) {
+    constructor(onPriceDown, onPriceUp, listenToClick) {
         this.priceDown.addEventListener('click', () => {
                 onPriceDown();
         });
         this.priceUp.addEventListener('click', () => {
                 onPriceUp();
         });
-        this.showModal = showModal;
+        this.listenToClick = listenToClick;
     }
 
     renderList = list => {
         const listHTML = list.map(this.renderCard);
         const joinList = listHTML.join('');
         this.cardsContainer.insertAdjacentHTML('afterbegin', joinList);
-
-        const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
-        learnMoreBtns.forEach(btn => btn.addEventListener('click', this.showModal));
+        this.getAllBtns();
     }
 
-    displayProductDetails(productDetails) {
-        const modalHTML = this.renderModal(productDetails);
-        this.cardsContainer.insertAdjacentHTML('beforeend', modalHTML);
+    getAllBtns() {
+        const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+        learnMoreBtns.forEach( btn => btn.addEventListener('click', this.listenToClick));
     }
 
     getId = (event) => {
@@ -50,31 +47,5 @@ export default class View {
           <span class="badge bg-success animal-type">${data.category}</span>
         </div>
       </div>`
-    }
-
-
-    renderModal = (info) => {
-        return `
-        <div id="a${info.id}" class="modal" style="display: block;">
-        <div class="modal-backdrop">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close" onclick="document.getElementById('a${info.id}').style.display='none';">&times;</span>
-                        <h5 class="modal-title">${info.breed}</h5>
-                    </div>
-                    <div class="modal-body">
-                        <p class="birth-date">Дата рождения: ${info.birthDate}</p>
-                        <p>${info.description}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark">
-                            <i class="fas fa-shopping-cart"></i>
-                        </button>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    </div>`
     }
 }

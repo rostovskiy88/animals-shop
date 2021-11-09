@@ -1,12 +1,14 @@
 import Controller from "./product/controller.js";
+import ModalController from "./modal/modal_controller.js";
 
 const showCards = new Controller();
+const modalController = new ModalController();
 showCards.init();
 
 // const catsAgeOutput = document.querySelector('.cats-age');
 // const dogsAgeOutput = document.querySelector('.dogs-age');
 // const rodentsAgeOutput = document.querySelector('.rodents-age');
-// const catsRange = document.querySelector('.cats-age-range');
+// const catsRange = do`cument.querySelector('.cats-age-range');
 // const dogsRange = document.querySelector('.dogs-age-range');
 // const rodentsRange = document.querySelector('.rodents-age-range');
 
