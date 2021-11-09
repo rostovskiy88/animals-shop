@@ -10,7 +10,6 @@ export default class Controller {
     init = async () => {
         const data = await this.model.getData();
         this.view.renderList(data);
-        this.view.renderModal(data);
     }
 
     onPriceDown = async () => {

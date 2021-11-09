@@ -23,14 +23,14 @@ export default class View {
         learnMoreBtns.forEach(btn => btn.addEventListener('click', this.showModal));
     }
 
-    getId = (event) => {
-        const id = event.target.attributes['data-id'].value;
-        return id;
-    }
-
     displayProductDetails(productDetails) {
         const modalHTML = this.renderModal(productDetails);
         this.cardsContainer.insertAdjacentHTML('beforeend', modalHTML);
+    }
+
+    getId = (event) => {
+        const id = event.target.attributes['data-id'].value;
+        return id;
     }
 
     renderCard = (data) => {
@@ -52,14 +52,15 @@ export default class View {
       </div>`
     }
 
+
     renderModal = (info) => {
         return `
-        <div id="myModal" class="modal">
+        <div id="a${info.id}" class="modal" style="display: block;">
         <div class="modal-backdrop">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="close" onclick="document.getElementById('myModal').style.display='none';">&times;</span>
+                        <span class="close" onclick="document.getElementById('a${info.id}').style.display='none';">&times;</span>
                         <h5 class="modal-title">${info.breed}</h5>
                     </div>
                     <div class="modal-body">
@@ -74,14 +75,6 @@ export default class View {
                 </div> 
             </div>
         </div>
-    </div>
-        `
+    </div>`
     }
 }
-
-// 1. Повесить слушатель на каждую кнопку "Узнать больше";
-// 2. Сделать событие, которое будет открывать модальное окно по клику на "Узнать больше";
-// 3. Это событие должно получать айди того продукта, на которое было кликнуто.
-// 4. Обработчик должен по айди передать данные для рендера модального окна.
-// 5. Создать метод для рендера модального окна
-// 6. Создать метод для вставки модального окна на страницу

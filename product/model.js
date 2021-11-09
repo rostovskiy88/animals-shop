@@ -24,4 +24,5 @@ export default class Model {
         const data = await this.getData();
         return data.filter( el => el.id === id)[0];
     }
- }
+}
+   
