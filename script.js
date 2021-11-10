@@ -1,6 +1,6 @@
-import Controller from "./product/controller.js";
-import ModalController from "./modal/modal_controller.js";
-import CategoryController from "./filterByCategory/category_controller.js";
+import Controller from './product/controller.js';
+import ModalController from './modal/modal_controller.js';
+import CategoryController from './filterByCategory/category_controller.js';
 
 const showCards = new Controller();
 const modalController = new ModalController();
@@ -38,4 +38,3 @@ showCards.init();
 // rodentsRange.addEventListener('change', () => {
 //     displayAge(rodentsRange, rodentsAgeOutput);
 // });
-
