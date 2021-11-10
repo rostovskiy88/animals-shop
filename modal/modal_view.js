@@ -1,14 +1,14 @@
 export default class ModalView {
-    cardsContainer = document.querySelector('.cards');
-    
-    displayProductDetails(productDetails) {
-        const modalHTML = this.renderModal(productDetails);
-        this.cardsContainer.insertAdjacentHTML('beforeend', modalHTML);
-    }
+  cardsContainer = document.querySelector('.cards');
 
-    renderModal = (info) => {
-        if (info.category === 'собака' || info.category === 'грызун') {
-            return `<div id="a${info.id}" class="modal" style="display: block;">
+  displayProductDetails(productDetails) {
+    const modalHTML = this.renderModal(productDetails);
+    this.cardsContainer.insertAdjacentHTML('beforeend', modalHTML);
+  }
+
+  renderModal = (info) => {
+    if (info.category === 'собака' || info.category === 'грызун') {
+      return `<div id="a${info.id}" class="modal" style="display: block;">
             <div class="modal-backdrop">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -28,9 +28,9 @@ export default class ModalView {
                     </div> 
                 </div>
             </div>
-        </div>`
-        } else if (info.category === 'кот') {
-            return `<div id="a${info.id}" class="modal" style="display: block;">
+        </div>`;
+    } else if (info.category === 'кот') {
+      return `<div id="a${info.id}" class="modal" style="display: block;">
             <div class="modal-backdrop">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -51,7 +51,7 @@ export default class ModalView {
                     </div> 
                 </div>
             </div>
-        </div>`
-        }
+        </div>`;
     }
+  };
 }
