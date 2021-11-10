@@ -1,37 +1,46 @@
 export default class View {
-    priceDown = document.querySelector('.priceDown');
-    priceUp = document.querySelector('.priceUp');
-    cardsContainer = document.querySelector('.cards');
+  priceDown = document.querySelector('.priceDown');
+  priceUp = document.querySelector('.priceUp');
+  cardsContainer = document.querySelector('.cards');
+  searchInput = document.querySelector('#search-input');
 
-    constructor(onPriceDown, onPriceUp, listenToClick) {
-        this.priceDown.addEventListener('click', () => {
-                onPriceDown();
-        });
-        this.priceUp.addEventListener('click', () => {
-                onPriceUp();
-        });
-        this.listenToClick = listenToClick;
-    }
+  constructor(onPriceDown, onPriceUp, listenToClick, changeSearch) {
+    this.priceDown.addEventListener('click', () => {
+      onPriceDown();
+    });
+    this.priceUp.addEventListener('click', () => {
+      onPriceUp();
+    });
+    this.searchInput.addEventListener('change', changeSearch);
+    this.listenToClick = listenToClick;
+  }
 
-    renderList = list => {
-        const listHTML = list.map(this.renderCard);
-        const joinList = listHTML.join('');
-        this.cardsContainer.insertAdjacentHTML('afterbegin', joinList);
-        this.getAllBtns();
-    }
+  getSearchData() {
+    console.log(this.searchInput.value);
+    return this.searchInput.value;
+  }
 
-    getAllBtns() {
-        const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
-        learnMoreBtns.forEach( btn => btn.addEventListener('click', this.listenToClick));
-    }
+  renderList = (list) => {
+    const listHTML = list.map(this.renderCard);
+    const joinList = listHTML.join('');
+    this.cardsContainer.innerHTML = joinList;
+    this.getAllBtns();
+  };
 
-    getId = (event) => {
-        const id = event.target.attributes['data-id'].value;
-        return id;
-    }
+  getAllBtns() {
+    const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+    learnMoreBtns.forEach((btn) =>
+      btn.addEventListener('click', this.listenToClick)
+    );
+  }
 
-    renderCard = (data) => {
-        return `
+  getId = (event) => {
+    const id = event.target.attributes['data-id'].value;
+    return id;
+  };
+
+  renderCard = (data) => {
+    return `
         <div class="card m-3" style="width: 275px; height: 500px">
         <h5 class="card-header text-center">${data.breed}</h5>
         <img src=${data.image} class="card-img-top animal-image" style="object-fit: contain" alt="Animal">
@@ -46,6 +55,6 @@ export default class View {
           <span class="badge bg-danger gender">${data.gender}</span>
           <span class="badge bg-success animal-type">${data.category}</span>
         </div>
-      </div>`
-    }
+      </div>`;
+  };
 }

@@ -1,13 +1,13 @@
 export default class ModalView {
-    cardsContainer = document.querySelector('.cards');
-    
-    displayProductDetails(productDetails) {
-        const modalHTML = this.renderModal(productDetails);
-        this.cardsContainer.insertAdjacentHTML('beforeend', modalHTML);
-    }
+  cardsContainer = document.querySelector('.cards');
 
-    renderModal = (info) => {
-        return `
+  displayProductDetails(productDetails) {
+    const modalHTML = this.renderModal(productDetails);
+    this.cardsContainer.insertAdjacentHTML('beforeend', modalHTML);
+  }
+
+  renderModal = (info) => {
+    return `
         <div id="a${info.id}" class="modal" style="display: block;">
         <div class="modal-backdrop">
             <div class="modal-dialog">
@@ -17,6 +17,7 @@ export default class ModalView {
                         <h5 class="modal-title">${info.breed}</h5>
                     </div>
                     <div class="modal-body">
+                        <p class="birth-date">Количество: ${info.quantity}</p>
                         <p class="birth-date">Дата рождения: ${info.birthDate}</p>
                         <p>${info.description}</p>
                     </div>
@@ -28,6 +29,6 @@ export default class ModalView {
                 </div> 
             </div>
         </div>
-    </div>`
-    }
+    </div>`;
+  };
 }
