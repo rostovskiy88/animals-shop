@@ -52,24 +52,12 @@
             <p class="badge bg-secondary priceUp" style="width: 80%"">По возрастанию</p>
         </div>
         <div class="filters p-3 d-flex flex-column" style="width: 80%">
-          <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Коты <span class="badge bg-dark">26</span>
-            </label>
-          </div>
-          <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckChecked">
-              Муж <span class="badge bg-secondary">18</span>
-            </label>
-          </div>
-          <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckChecked">
-              Жен <span class="badge bg-secondary">8</span>
-            </label>
-          </div>
+          <!-- <p class="category" data-category="кот">Коты</p> -->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" data-category="кот">Коты</li>
+              <li class="list-group-item ms-3">Жен</li>
+              <li class="list-group-item ms-3">Муж</li>
+            </ul>
           <div>
             <label for="customRange2" class="form-label">Возраст: <span class="cats-age"></span></label>
             <input type="range" class="form-range cats-age-range" min="1" max="120" id="customRange2">
@@ -86,7 +74,7 @@
         
         <div class="filters p-3 d-flex flex-column" style="width: 80%">
           <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input category" type="checkbox" value="собака" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Собаки <span class="badge bg-dark">48</span>
             </label>
@@ -129,7 +117,7 @@
         
         <div class="filters p-3 d-flex flex-column" style="width: 80%">
           <div class="form-check m-1">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input category" type="checkbox" value="грызун" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Грызуны <span class="badge bg-dark">26</span>
             </label>

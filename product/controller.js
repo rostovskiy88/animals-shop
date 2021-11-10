@@ -6,12 +6,18 @@ export default class Controller {
     constructor() {
         this.model = new Model();
         this.view = new View(this.onPriceDown, this.onPriceUp, this.listenToClick);
+        Publisher.subscribe(Publisher.events.productsCategory, this.filtered);
     }
     
     init = async () => {
         const data = await this.model.getData();
         this.view.renderList(data);
     }
+
+    filtered = (data) => {
+        console.log(data);
+        this.view.renderList(data);
+    };
 
     onPriceDown = async () => {
         const data = await this.model.getData();

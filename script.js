@@ -1,8 +1,10 @@
 import Controller from "./product/controller.js";
 import ModalController from "./modal/modal_controller.js";
+import CategoryController from "./filterByCategory/category_controller.js";
 
 const showCards = new Controller();
 const modalController = new ModalController();
+const filterByCategory = new CategoryController();
 showCards.init();
 
 // const catsAgeOutput = document.querySelector('.cats-age');

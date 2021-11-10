@@ -16,7 +16,7 @@ export default class View {
     renderList = list => {
         const listHTML = list.map(this.renderCard);
         const joinList = listHTML.join('');
-        this.cardsContainer.insertAdjacentHTML('afterbegin', joinList);
+        this.cardsContainer.innerHTML = joinList;
         this.getAllBtns();
     }
 

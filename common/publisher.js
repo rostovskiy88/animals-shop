@@ -16,6 +16,7 @@ export default class Publisher {
     }
 
     static events = {
-        productId: 'GET PRODUCT ID'
+        productId: 'GET PRODUCT ID',
+        productsCategory: 'GET CATEGORY OF THE PRODUCT',
     }
 }
