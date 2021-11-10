@@ -11,7 +11,13 @@ export default class Controller {
       this.listenToClick,
       this.changeSearch
     );
+    Publisher.subscribe(Publisher.events.productsCategory, this.filtered);
   }
+
+  filtered = (data) => {
+    console.log(data);
+    this.view.renderList(data);
+  };
 
   init = async () => {
     const data = await this.model.getData();

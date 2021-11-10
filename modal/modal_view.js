@@ -7,28 +7,51 @@ export default class ModalView {
   }
 
   renderModal = (info) => {
-    return `
-        <div id="a${info.id}" class="modal" style="display: block;">
-        <div class="modal-backdrop">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close" onclick="document.getElementById('a${info.id}').style.display='none';">&times;</span>
-                        <h5 class="modal-title">${info.breed}</h5>
-                    </div>
-                    <div class="modal-body">
-                        <p class="birth-date">Количество: ${info.quantity}</p>
-                        <p class="birth-date">Дата рождения: ${info.birthDate}</p>
-                        <p>${info.description}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark">
-                            <i class="fas fa-shopping-cart"></i>
-                        </button>
-                    </div>
-                </div> 
+    if (info.category === 'собака' || info.category === 'грызун') {
+      return `<div id="a${info.id}" class="modal" style="display: block;">
+            <div class="modal-backdrop">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" onclick="document.getElementById('a${info.id}').style.display='none';">&times;</span>
+                            <h5 class="modal-title">${info.breed}</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="birth-date">Дата рождения: ${info.birthDate}</p>
+                            <p>${info.description}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
             </div>
-        </div>
-    </div>`;
+        </div>`;
+    } else if (info.category === 'кот') {
+      return `<div id="a${info.id}" class="modal" style="display: block;">
+            <div class="modal-backdrop">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close" onclick="document.getElementById('a${info.id}').style.display='none';">&times;</span>
+                            <h5 class="modal-title">${info.breed}</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="birth-date">Дата рождения: ${info.birthDate}</p>
+                            <p class="birth-date">Игривость: ${info.madness} <i class="fas fa-star text-warning"></i></p>
+                            <p>${info.description}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>`;
+    }
   };
 }
