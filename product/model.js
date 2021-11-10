@@ -1,18 +1,25 @@
-import googleJson from './config.js';
+import ModelM from '../common/modelM.js';
+export default class Model extends ModelM {
+  sortByPriceDown(data) {
+    const sortedList = data.sort((a, b) => {
+      return a.cost - b.cost;
+    });
+    return sortedList;
+  }
 
-export default class Model {
-  loadGoogleSheet = async () => {
-    const resp = await fetch(googleJson);
-    const data = await resp.json();
-    return data;
-  };
+  sortByPriceUp(data) {
+    const sortedList = data.sort((a, b) => {
+      return b.cost - a.cost;
+    });
+    return sortedList;
+  }
 
-  getData = async (searchData = '') => {
+  getSearchData = async (searchData = '') => {
     const search = searchData.toLocaleLowerCase();
     if (search.trim() === '') {
-      this.data = await this.loadGoogleSheet();
+      this.data = await this.getData();
     } else {
-      const products = await this.loadGoogleSheet();
+      const products = await this.getData();
 
       this.data = products.filter((product) => {
         let dataToCheck = Object.values(product).map((val) =>
@@ -23,9 +30,5 @@ export default class Model {
       console.log('new data', this.data);
     }
     return this.data;
-  };
-
-  getModalData = async (id) => {
-    return this.data.filter((el) => el.id === id)[0];
   };
 }

@@ -18,384 +18,196 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>ZooShop</title>
-  </head>
-  <body>
-    <!--  NAVBAR STARTS HERE  -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container mt-1">
-        <a class="navbar-brand text-success" href="#">ZooShop</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+</head>
+<body>
+  <!--  NAVBAR STARTS HERE  -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container mt-1">
+      <a class="navbar-brand text-success" href="#">ZooShop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">О магазине</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <div class="panel-body">
+              <input id="search-input" type="text" placeholder="Поиск" class="form-control me-2" />
+          </div>
+            
+          </li>
+        </ul>
+        <button class="btn btn-dark me-3 position-relative">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >О магазине</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Контакты</a>
-            </li>
-            <li class="nav-item">
-              <div class="panel-body">
-                <input id="search-input" type="text" placeholder="Поиск" class="form-control me-2" />
-            </div>
-              <form class="d-flex">
-                <!-- <input
-                  id = "search-input"
-                  class="form-control me-2"
-                  type="text"
-                  placeholder="Поиск"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Поиск
-                </button> -->
-              </form>
-            </li>
-          </ul>
-          <button class="btn btn-dark me-3 position-relative">
-            <i class="fas fa-shopping-cart"></i>
-            <span
-              class="
-                position-absolute
-                top-0
-                start-100
-                translate-middle
-                badge
-                rounded-pill
-                bg-danger
-              "
-              >2</span
-            >
-          </button>
-          <button class="btn btn-dark"><i class="fas fa-history"></i></button>
-        </div>
+        <button class="btn btn-dark"><i class="fas fa-history"></i></button>   
       </div>
-    </nav>
-    <!--  /NAVBAR ENDS HERE  -->
-    <!--MAIN STARTS HERE -->
-    <div class="container">
-      <div class="row">
-        <!-- SIDEBAR STARTS HERE (FILTERS)-->
-        <div class="sidebar col-3 d-flex flex-column">
-          <div class="filters p-3 d-flex flex-column" style="width: 80%">
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Коты <span class="badge bg-dark">26</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Муж <span class="badge bg-secondary">18</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Жен <span class="badge bg-secondary">8</span>
-              </label>
-            </div>
-            <div>
-              <label for="customRange2" class="form-label"
-                >Возраст: <span class="cats-age"></span
-              ></label>
-              <input
-                type="range"
-                class="form-range cats-age-range"
-                min="1"
-                max="120"
-                id="customRange2"
-              />
-            </div>
-            <div>
-              Игривость:
-              <i class="far fa-star text-warning"></i>
-              <i class="far fa-star text-warning"></i>
-              <i class="far fa-star text-warning"></i>
-              <i class="far fa-star text-warning"></i>
-              <i class="far fa-star text-warning"></i>
-            </div>
-          </div>
-
-          <div class="filters p-3 d-flex flex-column" style="width: 80%">
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Собаки <span class="badge bg-dark">48</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Муж <span class="badge bg-secondary">22</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Жен <span class="badge bg-secondary">26</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Охотничья <span class="badge bg-secondary">26</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Декоративная <span class="badge bg-secondary">26</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Служебная <span class="badge bg-secondary">26</span>
-              </label>
-            </div>
-            <div>
-              <label for="customRange2" class="form-label"
-                >Возраст: <span class="dogs-age"></span
-              ></label>
-              <input
-                type="range"
-                class="form-range dogs-age-range"
-                min="1"
-                max="120"
-                id="customRange2"
-              />
-            </div>
-          </div>
-
-          <div class="filters p-3 d-flex flex-column" style="width: 80%">
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-              <label class="form-check-label" for="flexCheckDefault">
-                Грызуны <span class="badge bg-dark">26</span>
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Декоративные кролики
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Декоративные крысы
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Декоративные мыши
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Хомяки
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Морские свинки
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Шиншиллы
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Дегу
-              </label>
-            </div>
-            <div class="form-check m-1">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label class="form-check-label" for="flexCheckChecked">
-                Песчанки
-              </label>
-            </div>
-            <div>
-              <label for="customRange2" class="form-label"
-                >Возраст: <span class="rodents-age"></span
-              ></label>
-              <input
-                type="range"
-                class="form-range rodents-age-range"
-                min="1"
-                max="72"
-                id="customRange2"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- /SIDEBAR ENDS HERE (FILTERS)-->
-        <!-- CARDS SECTION STARTS HERE -->
-        <div class="col-9 d-flex flex-wrap justify-content-center cards"></div>
-      <!-- CARDS SECTION ENDS HERE -->
-      <!-- MODAL STARTS HERE -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Британская короткошерстная
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <p>Дата рождения: 23.12.2019</p>
-              <p>
-                Игривость: <span><i class="fas fa-star text-warning"></i></span>
-              </p>
-              <p>
-                Современные британские короткошерстные кошки – это хорошо
-                сложенные животные от среднего до крупного размера с мощным
-                телом, коренастыми ногами и крепкими округлыми лапами. Вес
-                взрослого животного колеблется от 3 до 7 кг, коты крупнее кошек.
-                Круглую голову венчают широко поставленные уши средних размеров.
-                А мордочка с полными щечками и большими круглыми распахнутыми
-                глазами никого не оставит равнодушным. Шерсть у этих кошек
-                
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark">
-                <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- MODAL ENDS HERE -->
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./main.js" type="module"></script>
-  </body>
+  </nav> 
+  <!--  /NAVBAR ENDS HERE  -->
+  <!--MAIN STARTS HERE -->
+  <div class="container">
+    <div class="row">
+      <!-- SIDEBAR STARTS HERE (FILTERS)-->
+      <div class="sidebar col-3 d-flex flex-column">
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
+            <p>Цена:</p>
+            <p class="badge bg-secondary priceDown" style="width: 80%"">По убыванию</p>
+            <p class="badge bg-secondary priceUp" style="width: 80%"">По возрастанию</p>
+        </div>
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Коты <span class="badge bg-dark">26</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Муж <span class="badge bg-secondary">18</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Жен <span class="badge bg-secondary">8</span>
+            </label>
+          </div>
+          <div>
+            <label for="customRange2" class="form-label">Возраст: <span class="cats-age"></span></label>
+            <input type="range" class="form-range cats-age-range" min="1" max="120" id="customRange2">
+          </div>
+          <div>
+            Игривость: 
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+            <i class="far fa-star text-warning"></i>
+          </div>
+        </div>
+        
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Собаки <span class="badge bg-dark">48</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Муж <span class="badge bg-secondary">22</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Жен <span class="badge bg-secondary">26</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Охотничья <span class="badge bg-secondary">26</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Декоративная <span class="badge bg-secondary">26</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Служебная <span class="badge bg-secondary">26</span>
+            </label>
+          </div>
+          <div>
+            <label for="customRange2" class="form-label">Возраст: <span class="dogs-age"></span></label>
+            <input type="range" class="form-range dogs-age-range" min="1" max="120" id="customRange2">
+          </div>
+        </div>
+        
+        <div class="filters p-3 d-flex flex-column" style="width: 80%">
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Грызуны <span class="badge bg-dark">26</span>
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Декоративные кролики 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Декоративные крысы 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Декоративные мыши 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Хомяки 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Морские свинки 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Шиншиллы 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Дегу 
+            </label>
+          </div>
+          <div class="form-check m-1">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+              Песчанки 
+            </label>
+          </div>
+          <div>
+            <label for="customRange2" class="form-label">Возраст: <span class="rodents-age"></span></label>
+            <input type="range" class="form-range rodents-age-range" min="1" max="72" id="customRange2">
+          </div>
+        </div>
+      </div>
+      <!-- /SIDEBAR ENDS HERE (FILTERS)-->
+      <!-- CARDS SECTION STARTS HERE -->
+      <div class="col-9 d-flex flex-wrap justify-content-center cards">
+        
+      </div>
+    </div>
+    <!-- CARDS SECTION ENDS HERE -->
+  </div>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="script.js" type="module"></script>
+</body>
 </html>
