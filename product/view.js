@@ -22,9 +22,12 @@ export default class View {
 
   renderList = (list) => {
     const listHTML = list.map(this.renderCard);
+    //console.log(listHTML);
     const joinList = listHTML.join('');
+    // console.log(joinList);
     this.cardsContainer.innerHTML = joinList;
     this.getAllBtns();
+    return listHTML;
   };
 
   getAllBtns() {

@@ -1,6 +1,7 @@
 import Publisher from '../common/publisher.js';
 import Model from './model.js';
 import View from './view.js';
+import PaginationView from '../pagination/pagination_view.js';
 
 export default class Controller {
   constructor() {
@@ -11,6 +12,7 @@ export default class Controller {
       this.listenToClick,
       this.changeSearch
     );
+    this.paginView = new PaginationView();
     Publisher.subscribe(Publisher.events.productsCategory, this.filtered);
   }
 
@@ -20,8 +22,15 @@ export default class Controller {
   };
 
   init = async () => {
-    const data = await this.model.getData();
-    this.view.renderList(data);
+    this.data = await this.model.getData();
+    Publisher.notify(Publisher.events.paginationInit, this.data);
+    this.view.renderList(this.data);
+    this.sendDataPagin(this.data);
+  };
+
+  sendDataPagin = async (data) => {
+    this.paginView.PaginInit(data);
+    console.log(data);
   };
 
   onPriceDown = async () => {
