@@ -23,7 +23,11 @@ export default class Publisher {
     dogsGender: 'DISPLAY DOGS BY GENDER',
     catsMadness: 'DISPLAY CATS BY MADNESS',
     productsAge: 'DISPLAY PRODUCTS BY AGE',
-    paginationInit: 'SEND DATA TO PAGINATION',
+
+    sendDataToPagin: 'SEND DATA TO PAGINATION',
+    priceDown: 'SORT DOWN BY PRICE',
+    priceUp: 'SORT UP BY PRICE',
+    cartId: 'ID OF THE PRODUCT TO GO TO CART',
     sendMsgToTG: 'SEND MESSAGE TO TELEGRAM',
   };
 }

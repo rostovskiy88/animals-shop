@@ -115,7 +115,6 @@
         </div>
         <!-- /SIDEBAR ENDS HERE (FILTERS)-->
         <!-- CARDS SECTION STARTS HERE -->
-        
       </div>   
       <div
           id="list"
@@ -125,29 +124,15 @@
       <!-- CART SECTION STARTS HERE -->
       <div id="cartModal" class="modal cart" style="display: none;">
         <div class="modal-backdrop">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Ваш заказ:</h5>
                         <span class="close" onclick="document.getElementById('cartModal').style.display='none';">&times;</span>
                     </div>
                     <div class="modal-body">
-                        <ol class="list-group list-group-numbered list-group-flush">
-                          <li class="list-group-item">
-                              <p>Австралийская овчарка</p>
-                              <p>Стоимость: 1200 UAH</p>
-                              <button class="btn btn-dark">-</button>
-                              <span class="btn btn-light">1</span>
-                              <button class="btn btn-dark">+</button>
-                          </li>
-                          <li class="list-group-item">
-                            <p>Австралийская овчарка</p>
-                              <p>Стоимость: 1200 UAH</p>
-                              <button class="btn btn-dark">-</button>
-                              <span class="btn btn-light">1</span>
-                              <button class="btn btn-dark">+</button>
-                          </li>
-                        </ol>
+                        <ul class="list-group list-group-flush products-list">
+                        </ul>
                     </div>
                     <div class="modal-footer d-flex flex-column">
                       <p>Введите ваши данные:</p>
@@ -170,7 +155,7 @@
                         </div>
                       </form>
                       <div>
-                        <button class="btn btn-light">Итого: 2400 UAH</button>
+                        <button class="btn btn-light total">Итого: 2400 UAH</button>
                         <button class="btn btn-dark">Заказать</button>
                         <button class="btn btn-dark">Отменить</button>
                       </div>
