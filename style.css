@@ -20,11 +20,15 @@ img {
   top: 0;
   left: 0;
   z-index: 1050;
-  /* display: block; */
+  /* display: block;  */
   width: 100%;
   height: 100%;
   overflow: hidden;
   outline: 0;
+}
+
+.modal.cart {
+  overflow-x: scroll;
 }
 
 .modal-backdrop {
@@ -67,6 +71,24 @@ img {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* li {
+  transition: all 0.3s;
+  letter-spacing: -1px;
+}
+
+li:hover {
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+} */
+.madness-level i {
+  animation: all 0.3s;
+}
+
+.madness-level i:hover {
+  transform: scale(1.2);
 }
 
 .pagenumbers {

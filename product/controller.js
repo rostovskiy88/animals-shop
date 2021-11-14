@@ -14,10 +14,14 @@ export default class Controller {
     );
     this.paginContr = new PaginController();
     Publisher.subscribe(Publisher.events.productsCategory, this.filtered);
+    Publisher.subscribe(Publisher.events.productsDogType, this.filtered);
+    Publisher.subscribe(Publisher.events.catsGender, this.filtered);
+    Publisher.subscribe(Publisher.events.dogsGender, this.filtered);
+    Publisher.subscribe(Publisher.events.catsMadness, this.filtered);
+    Publisher.subscribe(Publisher.events.productsAge, this.filtered);
   }
 
   filtered = (data) => {
-    console.log(data);
     this.view.renderList(data);
   };
 
