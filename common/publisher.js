@@ -24,5 +24,6 @@ export default class Publisher {
     catsMadness: 'DISPLAY CATS BY MADNESS',
     productsAge: 'DISPLAY PRODUCTS BY AGE',
     paginationInit: 'SEND DATA TO PAGINATION',
+    sendMsgToTG: 'SEND MESSAGE TO TELEGRAM',
   };
 }
