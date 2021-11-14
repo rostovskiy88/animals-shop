@@ -5,12 +5,8 @@ export default class View {
   searchInput = document.querySelector('#search-input');
 
   constructor(onPriceDown, onPriceUp, listenToClick, changeSearch) {
-    this.priceDown.addEventListener('click', () => {
-      onPriceDown();
-    });
-    this.priceUp.addEventListener('click', () => {
-      onPriceUp();
-    });
+    this.priceDown.addEventListener('click', onPriceDown);
+    this.priceUp.addEventListener('click', onPriceUp);
     this.searchInput.addEventListener('change', changeSearch);
     this.listenToClick = listenToClick;
   }

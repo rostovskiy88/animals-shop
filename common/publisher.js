@@ -17,6 +17,11 @@ export default class Publisher {
 
     static events = {
         productId: 'GET PRODUCT ID',
-        productsCategory: 'GET CATEGORY OF THE PRODUCT',
+        productsCategory: 'DISPLAY PRODUCTS BY CATEGORY',
+        productsDogType: 'DISPLAY DOGS BY TYPES',
+        catsGender: 'DISPLAY CATS BY GENDER',
+        dogsGender: 'DISPLAY DOGS BY GENDER',
+        catsMadness: 'DISPLAY CATS BY MADNESS',
+        productsAge: 'DISPLAY PRODUCTS BY AGE'
     }
 }

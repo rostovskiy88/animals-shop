@@ -6,4 +6,24 @@ export default class CategoryModel extends ModelM {
         const data = await this.getData();
         return data.filter(el => el.category === category);
     }
+
+    getDogsByType = async (type) => {
+        const data = await this.getData();
+        return data.filter(el => el.type === type);
+    }
+
+    getCatsByGender = async (gender) => {
+        const data = await this.getData();
+        return data.filter(el => el.category === 'кот' ? el.gender === gender : null);
+    }
+
+    getDogsByGender = async (gender) => {
+        const data = await this.getData();
+        return data.filter(el => el.category === 'собака' ? el.gender === gender : null);
+    }
+
+    getCatsByMadness = async (madness) => {
+        const data = await this.getData();
+        return data.filter(el => el.madness === madness);
+    }
 }

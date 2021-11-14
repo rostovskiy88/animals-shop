@@ -1,41 +1,39 @@
 import Controller from "./product/controller.js";
 import ModalController from "./modal/modal_controller.js";
 import CategoryController from "./filterByCategory/category_controller.js";
+import AgeController from './filterByAge/age_controller.js';
 
 const showCards = new Controller();
 const modalController = new ModalController();
 const filterByCategory = new CategoryController();
+const filterByAge = new AgeController();
 showCards.init();
 
-// const catsAgeOutput = document.querySelector('.cats-age');
-// const dogsAgeOutput = document.querySelector('.dogs-age');
-// const rodentsAgeOutput = document.querySelector('.rodents-age');
-// const catsRange = do`cument.querySelector('.cats-age-range');
-// const dogsRange = document.querySelector('.dogs-age-range');
-// const rodentsRange = document.querySelector('.rodents-age-range');
+// DISPLAYING STARS
+const madness = document.querySelectorAll('.madness');
+madness.forEach((star, idx) => {
+    star.addEventListener('click', ()=> {
+        highlightStars(idx);
+    });
+});
 
-// function checkAge(age) {
-//     let ageOut = '';
-//     if (age > 24) {
-//         ageOut = Math.floor(age / 12) + ',' + age % 12 + ' лет';
-//     } else {
-//         ageOut = age + ' месяцев';
-//     }
-//     return ageOut;
-// }
+function highlightStars(idx) {
+    if(madness[idx].classList.contains('fas') && !madness[idx].nextElementSibling.classList.contains('fas')) {
+        idx--;
+    }
 
-// function displayAge(range, output) {
-//     output.textContent = checkAge(range.value);
-//     console.log(range.value);
-// }
+    madness.forEach((star, idx2)=> {
+        if(idx2 <= idx) {
+            star.classList.remove('far');
+            star.classList.add('fas');
+        } else {
+            star.classList.remove('fas');
+            star.classList.add('far');
+        }
+    });
+}
 
-// catsRange.addEventListener('change', () => {
-//     displayAge(catsRange, catsAgeOutput);
-// });
-// dogsRange.addEventListener('change', () => {
-//     displayAge(dogsRange, dogsAgeOutput);
-// });
-// rodentsRange.addEventListener('change', () => {
-//     displayAge(rodentsRange, rodentsAgeOutput);
-// });
-
+// POPOVER
+let popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+    trigger: 'focus'
+  });
