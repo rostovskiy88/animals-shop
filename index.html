@@ -45,25 +45,23 @@
         <button class="btn btn-dark me-3 position-relative" onclick="document.getElementById('cartModal').style.display='block';"">
           <i class="fas fa-shopping-cart"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-        </button>
-        <button class="btn btn-dark"><i class="fas fa-history"></i></button>   
+        </button>       
       </div>
-    </div>
-  </nav> 
-  <!--  /NAVBAR ENDS HERE  -->
-  <!--MAIN STARTS HERE -->
-  <div class="container">
-    <div class="row">
-      <!-- SIDEBAR STARTS HERE (FILTERS)-->
-      <div class="sidebar col-3 d-flex flex-column">
-        <div class="filters p-3 d-flex flex-column" style="width: 80%">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item h6">Цена</li>
-            <li class="list-group-item ms-3 priceDown">По убыванию</li>
-            <li class="list-group-item ms-3 priceUp">По возрастанию</li>
-          </ul>
-        </div>
-        <div class="filters p-3 d-flex flex-column" style="width: 80%">
+    </nav>
+    <!--  /NAVBAR ENDS HERE  -->
+    <!--MAIN STARTS HERE -->
+    <div class="container">
+      <div class="row">
+        <!-- SIDEBAR STARTS HERE (FILTERS)-->
+        <div class="sidebar col-3 d-flex flex-column">
+          <div class="filters p-3 d-flex flex-column" style="width: 80%">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item h6">Цена</li>
+              <li class="list-group-item ms-3 priceDown">По убыванию</li>
+              <li class="list-group-item ms-3 priceUp">По возрастанию</li>
+            </ul>
+          </div>
+          <div class="filters p-3 d-flex flex-column" style="width: 80%">
             <ul class="list-group list-group-flush">
               <li class="list-group-item h6 category" data-category="кот">Коты</li>
               <li class="list-group-item ms-3 cats-gender" data-cats-gender="муж">Муж</li>
@@ -115,12 +113,15 @@
             <input type="range" class="form-range rodents-age-range" data-category="грызун" min="0" max="5" id="customRange2">
           </div>
         </div>
-      </div>
-      <!-- /SIDEBAR ENDS HERE (FILTERS)-->
-      <!-- CARDS SECTION STARTS HERE -->
-      <div class="col-9 d-flex flex-wrap justify-content-center cards">
+        <!-- /SIDEBAR ENDS HERE (FILTERS)-->
+        <!-- CARDS SECTION STARTS HERE -->
         
-      </div>
+      </div>   
+      <div
+          id="list"
+          class="col-9 d-flex flex-wrap justify-content-center cards"
+        ></div>
+        <div class="pagenumbers" id="pagination"></div>  
       <!-- CART SECTION STARTS HERE -->
       <div id="cartModal" class="modal cart" style="display: none;">
         <div class="modal-backdrop">

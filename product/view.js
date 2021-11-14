@@ -18,9 +18,12 @@ export default class View {
 
   renderList = (list) => {
     const listHTML = list.map(this.renderCard);
+    //console.log(listHTML);
     const joinList = listHTML.join('');
+    // console.log(joinList);
     this.cardsContainer.innerHTML = joinList;
     this.getAllBtns();
+    return listHTML;
   };
 
   getAllBtns() {
@@ -43,8 +46,8 @@ export default class View {
         <div class="card-body text-center d-flex flex-column justify-content-end">
           <p class="card-text h5 price">Стоимость: ${data.cost} UAH</p>
           <div>
-          <a href="#" class="btn btn-outline-dark learn-more-btn" data-id="${data.id}"">Узнать больше</a>
-          <a href="#" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#" class="btn btn-outline-dark learn-more-btn" data-id="${data.id}">Узнать больше</a>
+          <a href="#" id="${data.id}" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
           </div>
         </div>
         <div class="card-footer text-center">

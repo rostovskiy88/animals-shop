@@ -14,6 +14,11 @@ export default class Model extends ModelM {
     return sortedList;
   }
 
+  giveData = async () => {
+    const data = await this.getData();
+    return data;
+  };
+
   getSearchData = async (searchData = '') => {
     const search = searchData.toLocaleLowerCase();
     if (search.trim() === '') {
