@@ -1,14 +1,9 @@
 export default class View {
-  priceDown = document.querySelector('.priceDown');
-  priceUp = document.querySelector('.priceUp');
-  cardsContainer = document.querySelector('.cards');
+  
   searchInput = document.querySelector('#search-input');
 
-  constructor(onPriceDown, onPriceUp, listenToClick, changeSearch) {
-    this.priceDown.addEventListener('click', onPriceDown);
-    this.priceUp.addEventListener('click', onPriceUp);
+  constructor(changeSearch) {
     this.searchInput.addEventListener('change', changeSearch);
-    this.listenToClick = listenToClick;
   }
 
   getSearchData() {
@@ -18,24 +13,7 @@ export default class View {
 
   renderList = (list) => {
     const listHTML = list.map(this.renderCard);
-    //console.log(listHTML);
-    const joinList = listHTML.join('');
-    // console.log(joinList);
-    this.cardsContainer.innerHTML = joinList;
-    this.getAllBtns();
     return listHTML;
-  };
-
-  getAllBtns() {
-    const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
-    learnMoreBtns.forEach((btn) =>
-      btn.addEventListener('click', this.listenToClick)
-    );
-  }
-
-  getId = (event) => {
-    const id = event.target.attributes['data-id'].value;
-    return id;
   };
 
   renderCard = (data) => {
@@ -47,7 +25,7 @@ export default class View {
           <p class="card-text h5 price">Стоимость: ${data.cost} UAH</p>
           <div>
           <a href="#" class="btn btn-outline-dark learn-more-btn" data-id="${data.id}">Узнать больше</a>
-          <a href="#" id="${data.id}" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
+          <i class="fas fa-shopping-cart btn btn-outline-dark cart-btn" data-id="${data.id}"></i>
           </div>
         </div>
         <div class="card-footer text-center">

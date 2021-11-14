@@ -1,9 +1,12 @@
 export default class PaginationView {
-  constructor() {
+
+  constructor(sendLearnMoreBtnsId, sendCartBtnId) {
     this.list_element = document.getElementById('list');
     this.pagination_element = document.getElementById('pagination');
     this.current_page = 1;
     this.rows = 9;
+    this.sendLearnMoreBtnsId = sendLearnMoreBtnsId;
+    this.sendCartBtnId = sendCartBtnId;
   }
 
   SetupPagination(items, wrapper, rows_per_page) {
@@ -49,5 +52,24 @@ export default class PaginationView {
       item_element.innerHTML = item;
       wrapper.append(item_element);
     }
+    this.getAllLearnMoreBtns();
+    this.getAllCartBtns();
   }
+  
+  getAllLearnMoreBtns() {
+    this.learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+    this.learnMoreBtns.forEach((btn) => btn.addEventListener('click', this.sendLearnMoreBtnsId));
+  }
+
+  getAllCartBtns() {
+    this.cartBtns = document.querySelectorAll('.cart-btn');
+    this.cartBtns.forEach((btn) => btn.addEventListener('click', this.sendCartBtnId));
+  }
+
+  getId = (event) => {
+    console.log(event);
+    const id = event.target.attributes['data-id'].value;
+    console.log(id);
+    return id;
+  };
 }

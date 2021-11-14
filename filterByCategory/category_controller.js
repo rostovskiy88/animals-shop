@@ -10,7 +10,9 @@ export default class CategoryController {
             this.clickDogTypes, 
             this.filterByCatsGender, 
             this.filterByDogsGender, 
-            this.filterCatsByMadness);
+            this.filterCatsByMadness,
+            this.priceDown,
+            this.priceUp);
         this.model = new CategoryModel();
     }
 
@@ -43,4 +45,16 @@ export default class CategoryController {
         const data = await this.model.getCatsByMadness(val);
         Publisher.notify(Publisher.events.catsMadness, data);
     }
+
+    priceDown = async () => {
+        const data = await this.model.getData();
+        const sortedData = this.model.sortByPriceDown(data);
+        Publisher.notify(Publisher.events.priceDown, sortedData);
+      };
+    
+    priceUp = async () => {
+        const data = await this.model.getData();
+        const sortedData = this.model.sortByPriceUp(data);
+        Publisher.notify(Publisher.events.priceUp, sortedData);
+      };
 }
