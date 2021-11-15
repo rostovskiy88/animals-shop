@@ -96,6 +96,7 @@ img {
 .pagenumbers {
   display: flex;
   justify-content: flex-end;
+  padding-right: 10rem;
 }
 
 .pagenumbers button {
@@ -107,7 +108,7 @@ img {
   outline: none;
   cursor: pointer;
 
-  background-color: #44aaee;
+  background-color: #81868a;
 
   margin: 5px;
   transition: 0.4s;
@@ -119,10 +120,10 @@ img {
 }
 
 .pagenumbers button:hover {
-  background-color: #44eeaa;
+  background-color: #6fd3f1;
 }
 
 .pagenumbers button.active {
-  background-color: #44eeaa;
+  background-color: #22b7e4;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
