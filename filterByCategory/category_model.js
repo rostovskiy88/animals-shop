@@ -27,6 +27,11 @@ export default class CategoryModel extends ModelM {
         return data.filter(el => el.madness === madness);
     };
 
+    getRodentsByType = async (type) => {
+      const data = await this.getData();
+      return data.filter(el => el.type === type);
+    };
+
     sortByPriceDown = (data) => {
         console.log(data);
         const sortedList = data.sort((a, b) => {

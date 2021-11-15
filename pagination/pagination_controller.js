@@ -28,7 +28,6 @@ export default class PaginController {
 
   sendCartBtnId = (event) => {
     const id = this.paginView.getId(event);
-    console.log(id);
     Publisher.notify(Publisher.events.cartId, id);
   };
 

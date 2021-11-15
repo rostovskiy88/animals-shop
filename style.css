@@ -1,5 +1,6 @@
 body {
   position: relative;
+  background-image: url('./bg.jpg');
 }
 
 img {
@@ -73,16 +74,17 @@ img {
   cursor: pointer;
 }
 
-/* li {
+.sidebar li {
   transition: all 0.3s;
   letter-spacing: -1px;
 }
 
-li:hover {
+.sidebar li:hover {
   font-weight: 700;
   letter-spacing: 2px;
   cursor: pointer;
-} */
+}
+
 .madness-level i {
   animation: all 0.3s;
 }
@@ -92,14 +94,13 @@ li:hover {
 }
 
 .pagenumbers {
-  margin-left: 10rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .pagenumbers button {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 
   appearance: none;
   border: none;

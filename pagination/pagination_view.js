@@ -67,9 +67,7 @@ export default class PaginationView {
   }
 
   getId = (event) => {
-    console.log(event);
     const id = event.target.attributes['data-id'].value;
-    console.log(id);
     return id;
   };
 }

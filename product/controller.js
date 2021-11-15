@@ -6,14 +6,7 @@ export default class Controller {
   constructor() {
     this.model = new Model();
     this.view = new View(this.changeSearch);
-    Publisher.subscribe(Publisher.events.productsCategory, this.filtered);
-    Publisher.subscribe(Publisher.events.productsDogType, this.filtered);
-    Publisher.subscribe(Publisher.events.catsGender, this.filtered);
-    Publisher.subscribe(Publisher.events.dogsGender, this.filtered);
-    Publisher.subscribe(Publisher.events.catsMadness, this.filtered);
-    Publisher.subscribe(Publisher.events.productsAge, this.filtered);
-    Publisher.subscribe(Publisher.events.priceDown, this.filtered);
-    Publisher.subscribe(Publisher.events.priceUp, this.filtered);
+    Publisher.subscribe(Publisher.events.sortedData, this.filtered);
   }
 
   filtered = (data) => {
