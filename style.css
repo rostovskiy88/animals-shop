@@ -127,3 +127,26 @@ img {
   background-color: #22b7e4;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
+
+.open-filters {
+  display: none;
+}
+
+@media (max-width: 993px) {
+  .sidebar.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: -10px;
+    background-color: #fff; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+  }
+
+  .open-filters {
+    display: inline;
+  }
+}
