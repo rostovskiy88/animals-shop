@@ -58,6 +58,7 @@ export default class CartController {
     }
     const testData = {
       totPrice: await this.model.totalPrice,
+      totCount: await this.model.cartItems,
       data: await this.model.getData(),
       name: this.name.value,
       surname: this.surname.value,

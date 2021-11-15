@@ -10,8 +10,8 @@ export default class CartModel extends ModelM {
   getProductDetails = async (id) => {
     const data = await this.getData();
     this.cartItem = data.filter((el) => el.id === id)[0];
-    console.log(this.cartItem.cost);
-    console.log(this.cartItem.breed);
+    const test = this.cartItems.push(this.cartItem);
+    console.log(test);
     this.totalPrice += +this.cartItem.cost;
     console.log(this.totalPrice);
     return this.cartItem;
