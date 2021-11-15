@@ -6,7 +6,6 @@ export default class MessengerController {
     this.model = new MessengerModel();
     Publisher.subscribe(Publisher.events.sendMsgToTG, this.onSendMsg);
   }
-
   onSendMsg = async (data) => {
     let dataSend = await data;
     const breed = [];
@@ -15,12 +14,15 @@ export default class MessengerController {
     }
 
     const msg = `
-    Здравствуйте, ${dataSend.surname} ${dataSend.name}!
-    Вы оформили заказ в количестве ${
+    Внимание! ${dataSend.surname} ${
+      dataSend.name
+    } оформил(а) заказ в количестве ${
       dataSend.totCount.length
     } наименований на общую сумму ${dataSend.totPrice} грн.
-    Породы, которые вы выбрали: ${breed.join(', ')} 
-    Для подтверждения заказа мы свяжемся с Вами по телефону: ${dataSend.phone} 
+    Породы, которые были выбраны: ${breed.join(', ')} 
+    Для подтверждения заказа свяжитесь с Клиентом по телефону: ${
+      dataSend.phone
+    } 
     или по электронной почте: ${dataSend.email} 
     `;
     this.model.sendMsg(msg);
