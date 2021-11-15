@@ -14,8 +14,7 @@ export default class CartController {
     this.surname = document.getElementById('surname');
     this.phone = document.getElementById('phone');
     this.email = document.getElementById('email');
-
-    this.testbutton = document.getElementById('cartbutton');
+    this.testbutton = document.getElementById('cardbutton');
   }
 
   onAddToCart = async (id) => {
@@ -70,6 +69,8 @@ export default class CartController {
       email: this.email.value,
     };
     this.modalWindow.style.display = 'none';
+    const id = Date.now();
+    localStorage.setItem(id, JSON.stringify(testData));
     Publisher.notify(Publisher.events.sendMsgToTG, testData);
   };
 
