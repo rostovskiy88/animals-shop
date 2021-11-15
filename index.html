@@ -42,7 +42,7 @@
             
           </li>
         </ul>
-        <button id="cartbutton" class="btn btn-dark me-3 position-relative" onclick="document.getElementById('cartModal').style.display='block';"">
+        <button class="btn btn-dark me-3 position-relative" onclick="document.getElementById('cartModal').style.display='block';"">
           <i class="fas fa-shopping-cart"></i>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-number"></span>
         </button>  
@@ -54,7 +54,8 @@
       <div class="row">
         <span class="open-filters btn btn-dark" onclick="document.getElementById('mySidenav').style.width = '60%';">Filters</span>
         <!-- SIDEBAR STARTS HERE (FILTERS)-->
-          <div class="sidebar sidenav col-3 d-flex flex-column" id="mySidenav" onclick="document.getElementById('mySidenav').style.width = '0px';">
+          <div class="sidebar sidenav col-3 d-flex flex-column" id="mySidenav" >
+            <span class="close-filters btn btn-dark" onclick="document.getElementById('mySidenav').style.width = '0px';">Close</span>
             <div class="filters p-3 d-flex flex-column bg-white border-2 border-dark" style="width: 80%;">
                 <ul class="list-group list-group-flush bg-white">
                   <li class="list-group-item h6 bg-white border-dark">Цена</li>
