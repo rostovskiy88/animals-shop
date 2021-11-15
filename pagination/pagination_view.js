@@ -1,5 +1,4 @@
 export default class PaginationView {
-
   constructor(sendLearnMoreBtnsId, sendCartBtnId) {
     this.list_element = document.getElementById('list');
     this.pagination_element = document.getElementById('pagination');
@@ -55,21 +54,23 @@ export default class PaginationView {
     this.getAllLearnMoreBtns();
     this.getAllCartBtns();
   }
-  
+
   getAllLearnMoreBtns() {
     this.learnMoreBtns = document.querySelectorAll('.learn-more-btn');
-    this.learnMoreBtns.forEach((btn) => btn.addEventListener('click', this.sendLearnMoreBtnsId));
+    this.learnMoreBtns.forEach((btn) =>
+      btn.addEventListener('click', this.sendLearnMoreBtnsId)
+    );
   }
 
   getAllCartBtns() {
     this.cartBtns = document.querySelectorAll('.cart-btn');
-    this.cartBtns.forEach((btn) => btn.addEventListener('click', this.sendCartBtnId));
+    this.cartBtns.forEach((btn) =>
+      btn.addEventListener('click', this.sendCartBtnId)
+    );
   }
 
   getId = (event) => {
-    console.log(event);
     const id = event.target.attributes['data-id'].value;
-    console.log(id);
     return id;
   };
 }
