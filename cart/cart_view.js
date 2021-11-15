@@ -11,12 +11,11 @@ export default class CartView {
   }
 
   renderCartItem = (info) => {
-    console.log(info);
     return `
-        <li class="list-group-item">
+        <li id="${info.id}" class="list-group-item">
             <div class="title d-flex justify-content-between">
                 <p class="h3">${info.breed}</p>
-                <i class="fas fa-window-close delete" data-id="${info.id}"></i>
+                <i id="deleteposition" class="fas fa-window-close delete" data-id="${info.id}"></i>
             </div>
             <p>Стоимость: ${info.cost} UAH</p>
         </li>

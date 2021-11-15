@@ -1,4 +1,5 @@
 import ModelM from '../common/modelM.js';
+import Publisher from '../common/publisher.js';
 
 export default class CartModel extends ModelM {
   constructor() {
@@ -6,6 +7,7 @@ export default class CartModel extends ModelM {
     this.cartItems = [];
     this.totalPrice = 0;
     this.cartNumber = 0;
+    Publisher.subscribe(Publisher.events.sendMsgToTG, this.testDelete);
   }
 
   getProductDetails = async (id) => {
@@ -15,7 +17,12 @@ export default class CartModel extends ModelM {
     const test = this.cartItems.push(this.cartItem);
     console.log(test);
     this.totalPrice += +this.cartItem.cost;
-    console.log(this.totalPrice);
     return this.cartItem;
+  };
+
+  testDelete = async () => {
+    this.totalPrice = 0;
+    this.cartNumber = 0;
+    console.log('works');
   };
 }

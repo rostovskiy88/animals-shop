@@ -14,6 +14,8 @@ export default class CartController {
     this.surname = document.getElementById('surname');
     this.phone = document.getElementById('phone');
     this.email = document.getElementById('email');
+
+    this.delButton = document.getElementById('cartbutton');
   }
 
   onAddToCart = async (id) => {
@@ -25,6 +27,7 @@ export default class CartController {
     this.cancelButton.addEventListener('click', () => {
       this.modalWindow.style.display = 'none';
     });
+    this.delButton.addEventListener('click', this.deletePosButton);
     return data;
   };
 
@@ -70,5 +73,14 @@ export default class CartController {
     const id = Date.now();
     localStorage.setItem(id, JSON.stringify(testData));
     Publisher.notify(Publisher.events.sendMsgToTG, testData);
+  };
+
+  deletePosButton = () => {
+    const testdeletebutton = document.querySelectorAll('#deleteposition');
+    testdeletebutton.forEach((el) => {
+      el.addEventListener('click', () => {
+        document.getElementById(el.getAttribute('data-id')).remove();
+      });
+    });
   };
 }
