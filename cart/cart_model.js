@@ -5,11 +5,13 @@ export default class CartModel extends ModelM {
     super();
     this.cartItems = [];
     this.totalPrice = 0;
+    this.cartNumber = 0;
   }
 
   getProductDetails = async (id) => {
     const data = await this.getData();
     this.cartItem = data.filter((el) => el.id === id)[0];
+    this.cartNumber++;
     const test = this.cartItems.push(this.cartItem);
     console.log(test);
     this.totalPrice += +this.cartItem.cost;

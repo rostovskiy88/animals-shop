@@ -19,7 +19,8 @@ export default class CartController {
   onAddToCart = async (id) => {
     const data = await this.model.getProductDetails(id);
     const totalPrice = this.model.totalPrice;
-    this.view.displayCartItems(data, totalPrice);
+    const cartNumber = this.model.cartNumber;
+    this.view.displayCartItems(data, totalPrice, cartNumber);
     this.orderButton.addEventListener('click', this.sendInfoToTG);
     this.cancelButton.addEventListener('click', () => {
       this.modalWindow.style.display = 'none';

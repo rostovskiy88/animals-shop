@@ -21,7 +21,7 @@
 </head>
 <body>
   <!--  NAVBAR STARTS HERE  -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-dark mb-2">
     <div class="container mt-1">
       <a class="navbar-brand text-success" href="index.html">ZooShop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,10 +30,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a tabindex="0" class="nav-link popover-dismiss" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Магазин ZooShop" data-bs-content="Если у вас еще нет пушистика, тогда мы ждем ваш заказ! В нашем магазине представлены различные породы собак и кошек, а также разные виды грызунов.">О магазине</a>
+            <a tabindex="0" class="nav-link popover-dismiss" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Магазин ZooShop" data-bs-content="Если у вас еще нет пушистика, тогда мы ждем ваш заказ! В нашем магазине представлены различные породы собак и кошек, а также разные виды грызунов."><b>О магазине</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Контакты</a>
+            <a class="nav-link" href="#"><b>Контакты</b></a>
           </li>
           <li class="nav-item">
             <div class="panel-body">
@@ -44,8 +44,8 @@
         </ul>
         <button class="btn btn-dark me-3 position-relative" onclick="document.getElementById('cartModal').style.display='block';"">
           <i class="fas fa-shopping-cart"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">2</span>
-        </button>       
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-number"></span>
+        </button>  
       </div>
     </nav>
     <!--  /NAVBAR ENDS HERE  -->
@@ -53,80 +53,72 @@
     <div class="container">
       <div class="row">
         <!-- SIDEBAR STARTS HERE (FILTERS)-->
-        <div class="sidebar col-3 d-flex flex-column">
-          <div class="filters p-3 d-flex flex-column" style="width: 80%">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item h6">Цена</li>
-              <li class="list-group-item ms-3 priceDown">По убыванию</li>
-              <li class="list-group-item ms-3 priceUp">По возрастанию</li>
+          <div class="sidebar col-3 d-flex flex-column">
+            <div class="filters p-3 d-flex flex-column bg-white border-2 border-dark" style="width: 80%;">
+              <ul class="list-group list-group-flush bg-white">
+                <li class="list-group-item h6 bg-white border-dark">Цена</li>
+                <li class="list-group-item ms-3 priceDown bg-white border-dark">По убыванию</li>
+                <li class="list-group-item ms-3 priceUp bg-white border-dark">По возрастанию</li>
+              </ul>
+            </div>
+            <div class="filters p-3 d-flex flex-column bg-white border-2 border-dark" style="width: 80%">
+              <ul class="list-group list-group-flush bg-white">
+                <li class="list-group-item h6 category border-dark" data-category="кот">Коты</li>
+                <li class="list-group-item ms-3 cats-gender border-dark" data-cats-gender="муж">Муж</li>
+                <li class="list-group-item ms-3 cats-gender border-dark" data-cats-gender="жен">Жен</li>
+              </ul>
+            <div>
+              <label for="customRange2" class="form-label">Возраст: <span class="cats-age"></span></label>
+              <input type="range" class="form-range cats-age-range" data-category="кот" min="0" max="10" id="customRange2">
+            </div>
+            <div class="madness-level">
+              Игривость: 
+              <i class="far fa-star text-warning madness" data-madness="1"></i>
+              <i class="far fa-star text-warning madness" data-madness="2"></i>
+              <i class="far fa-star text-warning madness" data-madness="3"></i>
+              <i class="far fa-star text-warning madness" data-madness="4"></i>
+              <i class="far fa-star text-warning madness" data-madness="5"></i>
+            </div>
+          </div>
+          
+          <div class="filters p-3 d-flex flex-column bg-white border-2 border-dark" style="width: 80%">
+            <ul class="list-group list-group-flush bg-white">
+              <li class="list-group-item h6 category border-dark" data-category="собака">Собаки</li>
+              <li class="list-group-item ms-3 dogs-gender border-dark" data-dogs-gender="муж">Муж</li>
+              <li class="list-group-item ms-3 dogs-gender border-dark" data-dogs-gender="жен">Жен</li>
+              <li class="list-group-item ms-3 dog-type border-dark" data-dog-type="охотничья">Охотничья</li>
+              <li class="list-group-item ms-3 dog-type border-dark" data-dog-type="декоративная">Декоративная</li>
+              <li class="list-group-item ms-3 dog-type border-dark" data-dog-type="служебная">Служебная</li>
             </ul>
+            <div>
+              <label for="customRange2" class="form-label">Возраст: <span class="dogs-age"></span></label>
+              <input type="range" class="form-range dogs-age-range" data-category="собака" min="0" max="10" id="customRange2">
+            </div>
           </div>
-          <div class="filters p-3 d-flex flex-column" style="width: 80%">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item h6 category" data-category="кот">Коты</li>
-              <li class="list-group-item ms-3 cats-gender" data-cats-gender="муж">Муж</li>
-              <li class="list-group-item ms-3 cats-gender" data-cats-gender="жен">Жен</li>
+          
+          <div class="filters p-3 d-flex flex-column bg-white border-2 border-dark" style="width: 80%">
+            <ul class="list-group list-group-flush bg-white">
+              <li class="list-group-item h6 category border-dark" data-category="грызун">Грызуны</li>
+              <li class="list-group-item ms-3 rodents border-dark" data-rodent-type="мыши">Мыши</li>
+              <li class="list-group-item ms-3 rodents border-dark" data-rodent-type="хомяк">Хомяки</li>
             </ul>
-          <div>
-            <label for="customRange2" class="form-label">Возраст: <span class="cats-age"></span></label>
-            <input type="range" class="form-range cats-age-range" data-category="кот" min="0" max="10" id="customRange2">
-          </div>
-          <div class="madness-level">
-            Игривость: 
-            <i class="far fa-star text-warning madness" data-madness="1"></i>
-            <i class="far fa-star text-warning madness" data-madness="2"></i>
-            <i class="far fa-star text-warning madness" data-madness="3"></i>
-            <i class="far fa-star text-warning madness" data-madness="4"></i>
-            <i class="far fa-star text-warning madness" data-madness="5"></i>
-          </div>
-        </div>
-        
-        <div class="filters p-3 d-flex flex-column" style="width: 80%">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item h6 category" data-category="собака">Собаки</li>
-            <li class="list-group-item ms-3 dogs-gender" data-dogs-gender="муж">Муж</li>
-            <li class="list-group-item ms-3 dogs-gender" data-dogs-gender="жен">Жен</li>
-            <li class="list-group-item ms-3 dog-type" data-dog-type="охотничья">Охотничья</li>
-            <li class="list-group-item ms-3 dog-type" data-dog-type="декоративная">Декоративная</li>
-            <li class="list-group-item ms-3 dog-type" data-dog-type="служебная">Служебная</li>
-          </ul>
-          <div>
-            <label for="customRange2" class="form-label">Возраст: <span class="dogs-age"></span></label>
-            <input type="range" class="form-range dogs-age-range" data-category="собака" min="0" max="10" id="customRange2">
-          </div>
-        </div>
-        
-        <div class="filters p-3 d-flex flex-column" style="width: 80%">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item h6 category" data-category="грызун">Грызуны</li>
-            <li class="list-group-item ms-3" >Декоративные кролики</li>
-            <li class="list-group-item ms-3">Декоративные крысы</li>
-            <li class="list-group-item ms-3">Декоративные мыши</li>
-            <li class="list-group-item ms-3">Хомяки</li>
-            <li class="list-group-item ms-3">Морские свинки</li>
-            <li class="list-group-item ms-3">Шиншиллы</li>
-            <li class="list-group-item ms-3">Дегу</li>
-            <li class="list-group-item ms-3">Песчанки</li>
-          </ul>
-          <div>
-            <label for="customRange2" class="form-label">Возраст: <span class="rodents-age"></span></label>
-            <input type="range" class="form-range rodents-age-range" data-category="грызун" min="0" max="5" id="customRange2">
+            <div>
+              <label for="customRange2" class="form-label">Возраст: <span class="rodents-age"></span></label>
+              <input type="range" class="form-range rodents-age-range" data-category="грызун" min="0" max="5" id="customRange2">
+            </div>
           </div>
         </div>
         <!-- /SIDEBAR ENDS HERE (FILTERS)-->
         <!-- CARDS SECTION STARTS HERE -->
+        <div id="list" class="col-9 d-flex flex-wrap justify-content-center cards"></div>
+        <div class="pagenumbers flex-wrap" id="pagination"></div>  
       </div>   
-      <div
-          id="list"
-          class="col-9 d-flex flex-wrap justify-content-center cards"
-        ></div>
-        <div class="pagenumbers" id="pagination"></div>  
       <!-- CART SECTION STARTS HERE -->
       <div id="cartModal" class="modal cart" style="display: none;">
         <div class="modal-backdrop">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header border-dark">
                         <h5 class="modal-title">Ваш заказ:</h5>
                         <span class="close" onclick="document.getElementById('cartModal').style.display='none';">&times;</span>
                     </div>
@@ -134,7 +126,7 @@
                         <ul class="list-group list-group-flush products-list">
                         </ul>
                     </div>
-                    <div class="modal-footer d-flex flex-column">
+                    <div class="modal-footer d-flex flex-column border-dark">
                       <p>Введите ваши данные:</p>
                       <form class="d-flex flex-wrap justify-content-center">
                         <div class="form-group me-3">
