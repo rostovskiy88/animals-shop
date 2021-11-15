@@ -14,8 +14,7 @@ export default class CartController {
     this.surname = document.getElementById('surname');
     this.phone = document.getElementById('phone');
     this.email = document.getElementById('email');
-
-    this.delButton = document.getElementById('cartbutton');
+    this.testbutton = document.getElementById('cardbutton');
   }
 
   onAddToCart = async (id) => {
@@ -27,7 +26,7 @@ export default class CartController {
     this.cancelButton.addEventListener('click', () => {
       this.modalWindow.style.display = 'none';
     });
-    this.delButton.addEventListener('click', this.deletePosButton);
+    this.testbutton.addEventListener('click', this.testButton);
     return data;
   };
 
@@ -75,7 +74,7 @@ export default class CartController {
     Publisher.notify(Publisher.events.sendMsgToTG, testData);
   };
 
-  deletePosButton = () => {
+  testButton = () => {
     const testdeletebutton = document.querySelectorAll('#deleteposition');
     testdeletebutton.forEach((el) => {
       el.addEventListener('click', () => {
