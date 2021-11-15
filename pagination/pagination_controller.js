@@ -3,7 +3,11 @@ import Publisher from '../common/publisher.js';
 
 export default class PaginController {
   constructor() {
-    this.paginView = new PaginationView();
+    this.paginView = new PaginationView(
+      this.sendLearnMoreBtnsId,
+      this.sendCartBtnId
+    );
+    Publisher.subscribe(Publisher.events.sendDataToPagin, this.PaginInit);
   }
 
   PaginInit = async (data) => {
@@ -18,5 +22,15 @@ export default class PaginController {
       this.paginView.pagination_element,
       this.paginView.rows
     );
+  };
+
+  sendLearnMoreBtnsId = (event) => {
+    const id = this.paginView.getId(event);
+    Publisher.notify(Publisher.events.productId, id);
+  };
+
+  sendCartBtnId = (event) => {
+    const id = this.paginView.getId(event);
+    Publisher.notify(Publisher.events.cartId, id);
   };
 }

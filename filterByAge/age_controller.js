@@ -13,6 +13,6 @@ export default class AgeController {
         const category = event.target.attributes['data-category'].value;
         const data = await this.model.getDataByAge(value, category);
         this.view.renderAge(category, value);
-        Publisher.notify(Publisher.events.productsAge, data);
+        Publisher.notify(Publisher.events.sortedData, data);
     }
 }

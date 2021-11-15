@@ -15,18 +15,26 @@ export default class AgeView {
     
     renderAge = (category, value) => {
         const word = this.checkValue(value);
-        if (category === 'кот') {
-            this.catsAgeOutput.textContent = `${value} ${word}`;
-        } else if (category === 'собака') {
-            this.dogsAgeOutput.textContent = `${value} ${word}`;
+        let output = '';
+        if (value == 0) {
+            output = word;
         } else {
-            this.rodentsAgeOutput.textContent = `${value} ${word}`;
+            output = value + word;
+        }
+        if (category === 'кот') {
+            this.catsAgeOutput.textContent = output;
+        } else if (category === 'собака') {
+            this.dogsAgeOutput.textContent = output;
+        } else {
+            this.rodentsAgeOutput.textContent = output;
         }
     }
 
     checkValue(value) {
         let word = '';
-        if (value == 1) {
+        if (value == 0) {
+            word = ' До года';
+        } else if (value == 1) {
             word = ' год';
         } else if (value == 2 || value == 3 || value == 4) {
             word = ' года';
